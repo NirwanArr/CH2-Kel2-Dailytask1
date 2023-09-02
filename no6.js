@@ -251,7 +251,7 @@ const users = [
         ],
         "favoriteFruit": "strawberry"
     }
-]
+];
 
 /*
     soal :
@@ -262,7 +262,7 @@ const cekGenderOrEyeColor = users => {
     let result = {
         users: [],
         total: 0
-    }
+    };
 
     users.forEach(user => {
         if (user.gender === 'female' || user.eyeColor === 'brown') {
@@ -272,7 +272,7 @@ const cekGenderOrEyeColor = users => {
     });
 
     return result;
-}
+};
 
-console.log(`total: ${cekGenderOrEyeColor(users).total}`)
+console.log(`total: ${cekGenderOrEyeColor(users).total}`);
 console.log(cekGenderOrEyeColor(users).users);

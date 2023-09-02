@@ -5,13 +5,10 @@
 // Cukup lakukan operasi aritmatika biasa.
 
 function solution(x, y) {
-    // Periksa apakah X kelipatan 5
-    if (x % 5 !== 0) {
-        return "(X) Jumlah penarikan harus kelipatan 5";
-        // Periksa apakah saldo rekening Yudi cukup untuk melakukan transaksi
-    } else if (x > y) {
-        return "(y) Saldo rekening tidak cukup";
-    } else {
+    //1. Periksa apakah X kelipatan 5 dan y lebih besar dari X
+    if (x % 5 === 0 && y > x) {
+        //2. Maka lakukan perhitungan saldo - (jumlah uang yang ditarik + biaya admin Bank) 
+        // lalu di masukan ke dalam variabel y
         y -= (x + 0.5);
     }
 
