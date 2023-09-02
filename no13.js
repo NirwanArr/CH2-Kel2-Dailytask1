@@ -251,23 +251,33 @@ const users = [
         ],
         "favoriteFruit": "strawberry"
     }
-]
+];
 
 /*
     soal :
     setiap nama dari user tukar nama belakang dan depan nya, contoh = "imam taufiq" menjadi "taufiq imam"
 */
 
+// 1. Buat fungsi swap name
 const swapName = users => {
     const result = users;
 
+    // 2. Lakukan perulangan
     result.forEach(user => {
+
+        // 3. buat variabel untuk menampung hasil
         let checkSpace = false;
         let namaDepan = "";
         let namaBelakang = "";
+
+        // 4. lakukan perulan ke 2 untuk mengecek data, keyword name
         for (let i = 0; i < user.name.length; i++) {
+
+            // 5. Jika memiliki spasi makan masukan nilai checkSpace menjadi true
             if (user.name[i] === ' ') {
                 checkSpace = true;
+
+                // 6. Jika checkSpace false adalah nama depan, jika true adalah nama belakang dan masing2 dimasukan ke variabel
             } else {
                 if (checkSpace === false) {
                     namaDepan += user.name[i];
@@ -277,10 +287,16 @@ const swapName = users => {
             }
         }
 
+        // 7. Lakukan pertukaran nama
         const tukarNama = `${namaBelakang} ${namaDepan}`;
         user.name = tukarNama;
     });
     return result;
-}
+};
 
-console.log(swapName(users));
+const resultSwapName = swapName(users);
+
+console.log("Daftar user:");
+resultSwapName.forEach(user => {
+    console.log(`Hasil Nama: ${user.name}`);
+});

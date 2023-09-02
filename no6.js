@@ -258,21 +258,38 @@ const users = [
     tentukan user yang gender female ATAU user yang eyeColor nya brown dan ada berapa jumlah user nya
 */
 
+// 1. Buat Fungsi Check Gender atau EyeColor
 const cekGenderOrEyeColor = users => {
+
+    // 2. Buat Array untuk menampung Hasil
     let result = {
         users: [],
-        total: 0
+        total: 0,
     };
 
+    // 3. Lakukan perulangan pada data Users
     users.forEach(user => {
+
+        // 4. Buat Kondisi Jika User Gender female atau Eye Color Brown
         if (user.gender === 'female' || user.eyeColor === 'brown') {
+
+            // 5. Puseh User ke array result.users
             result.users.push(user);
+
+            // 6. Hitung total user yang memenuhi kriteria
             result.total++;
         }
     });
 
+    // 7. Mengembalikan result
     return result;
 };
 
-console.log(`total: ${cekGenderOrEyeColor(users).total}`);
-console.log(cekGenderOrEyeColor(users).users);
+const genderOrEyeResult = cekGenderOrEyeColor(users);
+const dataUserResult = genderOrEyeResult.users;
+
+console.log("Daftar User yang Memenuhi Kriteria:\n");
+dataUserResult.forEach(user => {
+    console.log(`Nama: ${user.name}\nEyeColor: ${user.eyeColor}\n`);
+});
+console.log(`Total: ${genderOrEyeResult.total}`);
