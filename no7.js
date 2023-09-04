@@ -260,7 +260,7 @@ const users = [
 
 const checkNotFriend = users => {
     const result = {
-        users: [],
+        usersNotFriend: [],
         total: 0
     }
 
@@ -273,7 +273,7 @@ const checkNotFriend = users => {
         });
 
         if (hasFriend === false) {
-            result.users.push(user);
+            result.usersNotFriend.push(user);
             result.total++;
         }
     });
@@ -281,4 +281,4 @@ const checkNotFriend = users => {
 }
 
 console.log(`total: ${checkNotFriend(users).total}`);
-console.log(checkNotFriend(users).users);
+console.log(checkNotFriend(users).usersNotFriend);

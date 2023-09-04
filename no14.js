@@ -264,14 +264,8 @@ const changeCompanyAndEmail = users => {
 
     result.forEach(user => {
         user.company = 'binar';
-        userEmail = ""
-        for (let i = 0; i < user.email.length; i++) {
-            userEmail += user.email[i];
-            if (user.email[i] === '@') {
-                break;
-            }
-        }
-        user.email = `${userEmail}binar.org`;
+        userEmail = user.email.split('@')[0];
+        user.email = `${userEmail}@binar.org`;
     });
     return result;
 }
