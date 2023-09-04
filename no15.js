@@ -259,16 +259,20 @@ const users = [
 */
 
 const changeAddress = users => {
-    result = users;
+    // 1. Membuat variable result yang berisi duplikasi variabel users
+    const result = [...users]
 
-    result.forEach(user => {
-        if (user.gender === 'female') {
-            user.address = 'laut';
+    // 2. Membuat looping untuk melakukan pengecekan
+    for (let i = 0; i < result.length; i++){
+        // 3. Jika user memiliki gender female maka address nya diubah menjadi laut
+        if (result[i].gender === 'female') {
+            result[i].address = 'laut'
         }
-        if (user.gender === 'male') {
-            user.address = 'gunung';
+        // 4. Jika user memiliki gender male maka address nya diubah menjadi gunung
+        if (result[i].gender === 'male') {
+            result[i].address = 'gunung'
         }
-    });
+    }
     return result;
 }
 

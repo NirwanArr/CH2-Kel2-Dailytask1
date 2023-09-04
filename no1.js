@@ -258,17 +258,18 @@ const users = [
    tentukan user yang mempunyai buah favorit dia nya banana
 */
 
-// membuat function untuk menentukan user yang buah fav nya banana
-let checkFavFruit = (users, fruit) => {
-    // membuat array untuk menampung hasil
-    let result = []
+// 1. membuat function untuk menentukan user yang buah fav nya banana
+const checkFavFruit = (users, fruit) => {
+    // 2. membuat array untuk menampung hasil
+    const result = []
 
-    // membuat loop untuk mengecek semua user 
-    users.forEach(user => {
-        if (user.favoriteFruit === fruit) {
-            result.push(user);
+    // 3. membuat loop untuk mengecek semua user 
+    for (let i = 0; i < users.length; i++){
+        // 4. setiap user yang favoriteFruit nya sama dengan value dari parameter akan di push ke array result
+        if (users[i].favoriteFruit === fruit) {
+            result.push(users[i]);
         }
-    });
+    }
     return result;
 }
 

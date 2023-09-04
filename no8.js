@@ -259,16 +259,19 @@ const users = [
 */
 
 const checkFirstLetter = users => {
-    let result = {
+    // 1. Membuat object yang berisi array dan total untuk menampung object user dan total nya
+    const result = {
         user: [],
         total: 0
     }
-    users.forEach(user => {
-        if (user.company[0] === 'L' || user.company[0] === 'l') {
-            result.user.push(user);
+    // 2. Membuat looping untuk mengecek setiap user pada array
+    for (let i = 0; i < users.length; i++){
+        // 3. User yang index pertama company nya memiliki value L atau l akan di push ke array user pada object result dan total pada object result akan ditambahkan 1
+        if (users[i].company[0] === 'L' || users[i].company[0] === 'l') {
+            result.user.push(users[i]);
             result.total++;
         }
-    });
+    }
     return result;
 }
 
