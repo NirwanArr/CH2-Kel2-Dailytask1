@@ -258,30 +258,41 @@ const users = [
     tentukan user yang mempunyai teman bernama Grace dan favorit fruit nya apple atau banana
 */
 
+// 1. membuat function checkUsers
 const checkUsers = users => {
+    // 2. membuat objek untuk menampung hasil
     const result = {
         users: [],
         total: 0
     }
 
-
+    // 3. melakukan perulangan terhadap setiap user
     users.forEach(user => {
+        // 4. membuat variabel untuk menampung kondisi apakah punya teman grace atau tidak
         let hasFriendGrace = false;
 
+        // 5. melakukan perulangan terhadap setiap friend pada user
         user.friends.forEach(friend => {
+
+            // 6. apabila punya teman Grace maka hasFriendGrace = true
             if (friend.name === 'Grace') {
                 hasFriendGrace = true;
 
             }
         })
 
+        // 7. memfilter user yang mempunya teman grace dan buah favoritnya apple atau banana
         if (hasFriendGrace === true && (user.favoriteFruit === 'apple' || user.favoriteFruit === 'banana')) {
             result.users.push(user);
             result.total++;
         }
     });
+
+    // 8. mengembalikan hasil
     return result;
 }
 
+
+// 9. menampilkan hasil
 console.log(`total: ${checkUsers(users).total}`);
 console.log(checkUsers(users).users);
