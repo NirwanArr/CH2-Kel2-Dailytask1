@@ -230,28 +230,39 @@ const users = [
     tentukan user yang mempunya friend bernama Imam dan ada berapa jumlah user nya
 */
 
+// membuat arrow function bernama checkFriend
 const checkFriend = (users, friend) => {
+
+    // membuat objek untuk menampung hasil
     let result = {
         users: [],
         total: 0
     }
 
+    // melakukan perulangan terhadap setiap user
     users.forEach(user => {
+
+        // membuat variabel untuk menampung hasil pengecekan
         let hasFriend = false;
+
+        // melakukan pengecekan setiap friend dari user
         user.friends.forEach(userFriend => {
             if (userFriend.name === friend) {
                 hasFriend = true;
             }
         })
+
+        // jika hasFriend = true maka user ditampung ke hasil
         if (hasFriend === true) {
             result.users.push(user);
             result.total++;
         }
     });
 
-
     return result;
 }
 
+
+// menampilkan hasil
 console.log(`total yang punya teman Imam: ${checkFriend(users, 'Imam').total}`)
 console.log(checkFriend(users, 'Imam').users);

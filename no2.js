@@ -258,19 +258,13 @@ const users = [
     tentukan user yang gender female dan ada berapa jumlah user nya
 */
 
-
 const checkGender = users => {
     let result = {
-        maleUsers: [],
         femaleUsers: [],
-        totalMale: 0,
         totalFemale: 0
     }
+
     users.forEach(user => {
-        if (user.gender === 'male') {
-            result.maleUsers.push(user);
-            result.totalMale++;
-        }
         if (user.gender === 'female') {
             result.femaleUsers.push(user);
             result.totalFemale++;
@@ -279,11 +273,5 @@ const checkGender = users => {
     return result;
 }
 
-console.log(`banyaknya user: ${users.length}`);
-console.log(`total user male: ${checkGender(users).totalMale}`);
 console.log(`total user female: ${checkGender(users).totalFemale}`);
-
-// console.log('\n\nuser male: ')
-// console.log(checkGender(users).maleUsers);
-// console.log('\n\nuser female: ')
 console.log(checkGender(users).femaleUsers)
