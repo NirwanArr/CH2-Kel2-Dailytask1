@@ -1,27 +1,36 @@
-const numbers = [];
 
-for (let i = 1; i <= 100; i++) {
-    numbers.push(i);
-}
-
-const fizzBuzz = (numbers) => {
+// 1. membuat function fizzBuzz
+const fizzBuzz = () => {
+    // 2. membuat array untuk menampung hasil
     const result = [];
-    numbers.forEach(number => {
-        if (number % 3 === 0 && number % 5 === 0) {
+
+    // 3. melakukan perulangan 1 sampai 100
+    for (let i = 1; i <= 100; i++) {
+        // 4. mengecek apakah i habis dibagi 3 atau 5
+        if (i % 3 === 0 && i % 5 === 0) {
             console.log('FizzBuzz');
             result.push('FizzBuzz');
-        } else if (number % 3 === 0) {
+        }
+        // 5. mengecek apakah i habis dibagi 3
+        else if (i % 3 === 0) {
             console.log('Fizz');
             result.push('Fizz');
-        } else if (number % 5 === 0) {
+        }
+        // 6. mengecek apakah i habis dibagi 5
+        else if (i % 5 === 0) {
             console.log('Buzz');
             result.push('Buzz');
-        } else {
-            console.log(number);
-            result.push(number);
         }
-    });
+        // 7. jika i tidak habis dibagi 3 atau 5 maka masuk ke sini
+        else {
+            console.log(i);
+            result.push(i);
+        }
+    }
+
+    // 8. mengembalikan hasil
     return result;
 }
 
-fizzBuzz(numbers);
+// 9. menampilkan hasil
+fizzBuzz();
