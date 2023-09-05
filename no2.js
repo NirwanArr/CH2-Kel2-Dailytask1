@@ -258,20 +258,34 @@ const users = [
     tentukan user yang gender female dan ada berapa jumlah user nya
 */
 
-const checkGender = users => {
+// membuat Fungsi filter female user 
+const filterFemaleUsers = users => {
+
+    // deklarasi variabel
     let result = {
         femaleUsers: [],
-        totalFemale: 0
+        countFemale: 0,
+    };
+
+    // lakukan looping untuk mengecek data 1 per 1
+    for (let i = 0; i < users.length; i++) {
+
+        // mengecek user dengan gender female
+        if (users[i].gender === "female") {
+
+            // push data user dengan gender female
+            result.femaleUsers.push(users[i]);
+            // hitung jumlah user dengan gender female
+            result.countFemale++;
+        }
     }
 
-    users.forEach(user => {
-        if (user.gender === 'female') {
-            result.femaleUsers.push(user);
-            result.totalFemale++;
-        }
-    });
     return result;
-}
+};
 
-console.log(`total user female: ${checkGender(users).totalFemale}`);
-console.log(checkGender(users).femaleUsers)
+
+const filterFemaleResult = filterFemaleUsers(users);
+const femaleUsers = (filterFemaleResult.femaleUsers);
+
+console.log("User dengan gender female:\n", femaleUsers);
+console.log(`Jumlah user dengan jenis kelamin 'female' : ${filterFemaleResult.countFemale}`);

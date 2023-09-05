@@ -258,19 +258,28 @@ const users = [
     tentukan user yang company huruf belakang nya berawal E dan ada berapa jumlah user nya
 */
 
+// membuat fungsi checkLastLetter dengan parameter users
 const checkLastLetter = users => {
+    // membuat object dengan nama result
     let result = {
+        // membuat array kosong untuk menyimpan 
         users: [],
+        // membuat variable total untuk menyimpan jumlah 
         total: 0
     }
+    // melakukan loop untuk pengecekkan data
     users.forEach(user => {
+        // mengecek apakah user yang company huruf belakang nya berawal E atau user yang company huruf belakang nya berawal e
         if (user.company[user.company.length - 1] === 'E' || user.company[user.company.length - 1] === 'e') {
+            // jika sesuai kondisi diatas, data dimasukkan kedalam array users yang merupakan property dari object result
             result.users.push(user);
+            // memasukkan berapa kali loop yang sesuai dengan kondisi diatas kedalam variable total yang merupakan property dari object result
             result.total++;
         }
     });
+    // mengembailkan nilai result
     return result;
 }
-
+// mengeprint fungsi checkLastLetter
 console.log(`total: ${checkLastLetter(users).total}`);
 console.log(checkLastLetter(users).users);
