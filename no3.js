@@ -230,24 +230,26 @@ const users = [
     tentukan user yang registered pada tahun 2014 sampai dengan 2018 dan ada berapa jumlah user nya
 */
 
+//1. membuat function checkYearRegistered
 const checkYearRegistered = users => {
+    // 2. Buat Array untuk menampung Hasil
     let result = {
         users: [],
         total: 0
     }
+    //3. melalukan looping pada users
     users.forEach(user => {
-        let yearRegistered = "";
-        for (let i = 0; i < 4; i++) {
-            yearRegistered += user.registered[i]
-        }
-
-        if (yearRegistered >= 2014 && yearRegistered <= 2018) {
+        //4. membuat kondisi user yang register pada 2014 - 2018 
+        if(parseInt(user.registered)>=2014 && parseInt(user.registered)<=2018){
+            //5. memasukan data user ke dalam array
             result.users.push(user);
+            //6. mengecek jumlah user
             result.total++;
         }
     });
     return result;
 }
 
+//melihat total dari user yang terdaftar
 console.log(`total: ${checkYearRegistered(users).total}`);
 console.log(checkYearRegistered(users).users);

@@ -258,25 +258,26 @@ const users = [
     tentukan user yang berumur dibawah 30 dan registered sesudah tahun 2018 dan berapa jumlah nya
 */
 
+//1. membuat funtion checkAgeAndYearRegistered
 const checkAgeAndYearRegistered = users => {
+    // 2. Buat Array untuk menampung Hasil
     let result = {
         users: [],
         total: 0,
     }
-
+ //3. melalukan looping pada users
     users.forEach(user => {
-        let yearRegistered = "";
-        for (let i = 0; i < 4; i++) {
-            yearRegistered += user.registered[i];
-        }
-
-        if (user.age < 30 && yearRegistered > 2018) {
-            result.users.push(user);
-            result.total++;
+        //4. medeklarasikan user dibawah 30 dan regitered sesudah tahun 2018
+        if(user.age <30 && parseInt(user.registered)>2018){
+            //5. memasukan data user ke dalam array
+            result.users.push(user)
+            //6. mengecek jumlah user
+            result.total++
         }
     });
     return result
 }
 
+//melihat total dari user yang terdaftar
 console.log(`total: ${checkAgeAndYearRegistered(users).total}`);
 console.log(checkAgeAndYearRegistered(users).users);
