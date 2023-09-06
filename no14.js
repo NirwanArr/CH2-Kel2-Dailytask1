@@ -259,12 +259,16 @@ const users = [
 */
 
 const changeCompanyAndEmail = users => {
+    // Buat variable result untuk menampung data
     const result = users;
 
-
+    // Looping array untuk ubah semua data 
     result.forEach(user => {
+        // ubah company setiap user
         user.company = 'binar';
+        // ambil email lama dari user dengan split lalu ambil array 0
         userEmail = user.email.split('@')[0];
+        // ubah email user dengan email yang baru
         user.email = `${userEmail}@binar.org`;
     });
     return result;

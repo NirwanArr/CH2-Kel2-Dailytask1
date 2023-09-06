@@ -259,19 +259,24 @@ const users = [
 */
 
 const checkNotFriend = users => {
+    // buat obj untuk tampung hasil
     const result = {
         usersNotFriend: [],
         total: 0
     }
 
+    // looping array dari parameter
     users.forEach(user => {
         let hasFriend = false;
+        // looping friends pada setiap user
         user.friends.forEach(friend => {
+            // cek apakah mempunyai teman adella dan irfi
             if (friend.name === 'Adella' || friend.name === 'Irfi') {
                 hasFriend = true;
             }
         });
 
+        // jika tidak punya teman adella dan irfi tambahkan user pada result dan tambahkan total nya 
         if (hasFriend === false) {
             result.usersNotFriend.push(user);
             result.total++;
