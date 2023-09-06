@@ -12,6 +12,10 @@
 
 ![flowchart no 6](flowchart/Flowcart-Soal6.png)
 
+### Flowchart soal no 9
+
+![flowchart no 9](flowchart/no9.png)
+
 ### Flowchart soal no 17
 
 ![flowchart no 21](flowchart/no17.png)
@@ -23,5 +27,3 @@
 ### Flowchart soal no 21
 
 ![flowchart no 21](flowchart/no21.png)
-
-
