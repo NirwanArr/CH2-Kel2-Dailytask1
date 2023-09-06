@@ -4,5 +4,5 @@
 ### Flowchart soal no 6
 ![flowchart no 6](flowchart/Flowcart-Soal6.png)
 ### Flowchart soal no 21
-![flowchart no 21](flowchart/flowchart/no21.png)
+![flowchart no 21](flowchart/no21.png)
 
