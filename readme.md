@@ -6,7 +6,7 @@
 
 ### Flowchart soal no 5
 
-![flowchart no 1](flowchart/no.5.jpg)
+![flowchart no 5](flowchart/no.5.jpg)
 
 ### Flowchart soal no 6
 
